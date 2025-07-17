@@ -38,7 +38,7 @@ public class SlotMachine extends Thread {
         System.out.println("***********************************");
         System.out.println("Welcome to the java slots java !!😊");
         System.out.println("***********************************");
-        System.out.println("※RULE BOOK※\n1.Two or more emoticons should be consequtively same to win\n2.If you win, you get doubled amount of your given bet\n3.If you loose,you'll loose the the given bet amount");
+        System.out.println("※RULE BOOK※\n1.Two or more emoticons should be consecutively same to win\n2.If you win, you get doubled amount of your given bet\n3.If you loose,you'll loose the the given bet amount");
         System.out.println("***********************************");
         System.out.println("***********************************");
 
