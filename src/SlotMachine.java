@@ -29,7 +29,7 @@ public class SlotMachine extends Thread {
         //ask to play again
         //display exit message
 
-        String choose = " ";
+        String choose = "";
         int balance = -1;
         int bet = -1;
 
@@ -125,9 +125,20 @@ public class SlotMachine extends Thread {
                 balance -= bet;
             }
             System.out.println("***********************************");
-                    System.out.println("Do you want to play again?(Y/N)");
-                    choose = scanner.nextLine().toUpperCase();
-                    if (choose.equals("Y")) {
+            while (true) {
+                System.out.println("Do you want to play again?(Y/N)");
+                choose = scanner.nextLine().toUpperCase();
+                if (choose.length() != 1 || !Character.isLetter(choose.charAt(0))) {
+                    System.out.println("Invalid input!!");
+
+                } else if (choose.equals("Y") || choose.equals("N")) {
+                    break;
+                }else {
+                    System.out.println("Invalid input!! It should be either 'Y' or 'N'.");
+                }
+            }
+
+            if (choose.equals("Y")) {
                         boolean b = false;
                         while (!b) {
                             try {
@@ -137,8 +148,6 @@ public class SlotMachine extends Thread {
 
                                 if (bet > balance) {
                                     System.out.println("Bet amount is greater than your balance!!");
-                                    //  System.out.println("DO you want to exit?(press N)");
-                                    // choose = scanner.nextLine();
 
                                 } else if (bet <= 0) {
                                     System.out.println("Bet cannot be zero or negative!!");
